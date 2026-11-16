@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/scan.py",
-      "use": "@vercel/python"
+  "framework": null,
+  "functions": {
+    "api/scan.py": {
+      "maxDuration": 30
     }
-  ]
+  }
 }
