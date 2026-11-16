@@ -9,8 +9,8 @@ class handler(BaseHTTPRequestHandler):
         valid_channels = []
         checked_count = 0
 
-        # ആവശ്യാനുസരണം റേഞ്ച് കൂട്ടുകയോ കുറയ്ക്കുകയോ ചെയ്യാം (ഉദാഹരണത്തിന് 1 മുതൽ 150 വരെ)
-        for net_id in range(1, 150):
+        # ആവശ്യാനുസരണം റേഞ്ച് കൂട്ടുകയോ കുറയ്ക്കുകയോ ചെയ്യാം
+        for net_id in range(1, 100):
             target_url = base_url + str(net_id)
             checked_count += 1
             try:
@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
             except Exception:
                 pass
 
-        # റെസ്‍പോൺസ് JSON ഫോർമാറ്റിൽ വെർസലിലേക്ക് അയക്കുന്നു
+        # വെർസലിലേക്ക് JSON റെസ്‌പോൺസ് അയക്കുന്നു
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
